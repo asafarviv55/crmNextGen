@@ -16,7 +16,7 @@ import java.util.Set;
 )
 public class User {
     @Id
-    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "FirstName")
@@ -46,8 +46,11 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-    public User(String userName, String email, String password) {
-        this.userName = userName;
+    public User() {
+    }
+
+    public User(String username, String email, String password) {
+        this.userName = username;
         this.email = email;
         this.password = password;
     }

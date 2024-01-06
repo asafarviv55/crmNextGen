@@ -15,11 +15,10 @@ public class Role {
     private ERole name;
 
     public Role() {
-
     }
 
-    public Role(ERole name) {
-        this.name = name;
+    public Role(String name) {
+        this.name = ERole.valueOf(name);
     }
 
     public Integer getId() {
