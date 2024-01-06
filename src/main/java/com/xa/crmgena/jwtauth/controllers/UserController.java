@@ -21,6 +21,12 @@ public class UserController {
     UserRepository userRepository;
 
     @GetMapping("")
+    public String hello(){
+        return "Public area";
+    }
+
+
+    @GetMapping("/list")
     @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
     public List<User> getAll(){
         return userRepository.findAll();
