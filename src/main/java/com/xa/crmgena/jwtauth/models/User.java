@@ -1,17 +1,23 @@
 package com.xa.crmgena.jwtauth.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Entity
-@Table(name = "user")
+@Table(
+        name = "user",
+        uniqueConstraints = {
+                @UniqueConstraint(columnNames = "UserName"),
+                @UniqueConstraint(columnNames = "email")
+        }
+)
 public class User {
     @Id
     @Column(name = "ID")
-    private Integer id;
+    private Long id;
 
     @Column(name = "FirstName")
     private String firstName;
@@ -34,11 +40,18 @@ public class User {
     @Column(name = "UpdatedAt")
     private java.sql.Timestamp updatedAt;
 
-    public Integer getId() {
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(  name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles = new HashSet<>();
+
+
+    public Long getId() {
         return this.id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -96,5 +109,13 @@ public class User {
 
     public void setUpdatedAt(java.sql.Timestamp updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }
