@@ -1,4 +1,4 @@
-package com.xa.crmgena.jwtauth.payload.request;
+package com.xa.crmgena.crm.payload.request;
 
 import jakarta.validation.constraints.NotBlank;
 

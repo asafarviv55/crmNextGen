@@ -1,4 +1,4 @@
-package com.xa.crmgena.jwtauth.models;
+package com.xa.crmgena.crm.models;
 
 import jakarta.persistence.*;
 

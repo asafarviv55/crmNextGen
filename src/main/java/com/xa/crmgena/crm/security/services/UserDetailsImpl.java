@@ -1,10 +1,10 @@
-package com.xa.crmgena.jwtauth.security.services;
+package com.xa.crmgena.crm.security.services;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-import com.xa.crmgena.jwtauth.models.User;
+import com.xa.crmgena.crm.models.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

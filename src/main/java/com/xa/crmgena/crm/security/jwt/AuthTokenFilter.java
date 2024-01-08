@@ -1,6 +1,6 @@
-package com.xa.crmgena.jwtauth.security.jwt;
+package com.xa.crmgena.crm.security.jwt;
 
-import com.xa.crmgena.jwtauth.security.services.UserDetailsServiceImpl;
+import com.xa.crmgena.crm.security.services.UserDetailsServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

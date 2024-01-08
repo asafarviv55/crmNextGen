@@ -1,7 +1,7 @@
-package com.xa.crmgena.jwtauth;
+package com.xa.crmgena.crm;
 
-import com.xa.crmgena.jwtauth.models.Role;
-import com.xa.crmgena.jwtauth.repositories.RoleRepository;
+import com.xa.crmgena.crm.models.Role;
+import com.xa.crmgena.crm.repositories.RoleRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -10,14 +10,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class JwtAuthApplication {
+public class CrmApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(JwtAuthApplication.class, args);
+        SpringApplication.run(CrmApplication.class, args);
     }
 
 
-    private static final Logger log =  LoggerFactory.getLogger(JwtAuthApplication.class);
+    private static final Logger log =  LoggerFactory.getLogger(CrmApplication.class);
 
     @Bean
     CommandLineRunner initDatabase(RoleRepository roleRepository){

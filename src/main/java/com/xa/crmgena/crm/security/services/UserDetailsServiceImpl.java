@@ -1,7 +1,7 @@
-package com.xa.crmgena.jwtauth.security.services;
+package com.xa.crmgena.crm.security.services;
 
-import com.xa.crmgena.jwtauth.models.User;
-import com.xa.crmgena.jwtauth.repositories.UserRepository;
+import com.xa.crmgena.crm.models.User;
+import com.xa.crmgena.crm.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

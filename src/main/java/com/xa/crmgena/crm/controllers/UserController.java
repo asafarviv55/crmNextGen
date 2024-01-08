@@ -1,8 +1,8 @@
-package com.xa.crmgena.jwtauth.controllers;
+package com.xa.crmgena.crm.controllers;
 
 
-import com.xa.crmgena.jwtauth.models.User;
-import com.xa.crmgena.jwtauth.repositories.UserRepository;
+import com.xa.crmgena.crm.models.User;
+import com.xa.crmgena.crm.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;

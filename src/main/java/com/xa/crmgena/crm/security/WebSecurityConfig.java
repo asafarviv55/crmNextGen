@@ -1,9 +1,8 @@
-package com.xa.crmgena.jwtauth.security;
+package com.xa.crmgena.crm.security;
 
 
-import com.xa.crmgena.jwtauth.security.jwt.AuthEntryPointJwt;
-import com.xa.crmgena.jwtauth.security.jwt.AuthTokenFilter;
-import com.xa.crmgena.jwtauth.security.services.UserDetailsServiceImpl;
+import com.xa.crmgena.crm.security.jwt.AuthEntryPointJwt;
+import com.xa.crmgena.crm.security.services.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

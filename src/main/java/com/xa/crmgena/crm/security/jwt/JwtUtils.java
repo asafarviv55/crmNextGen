@@ -1,6 +1,6 @@
-package com.xa.crmgena.jwtauth.security.jwt;
+package com.xa.crmgena.crm.security.jwt;
 
-import com.xa.crmgena.jwtauth.security.services.UserDetailsImpl;
+import com.xa.crmgena.crm.security.services.UserDetailsImpl;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;

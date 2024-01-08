@@ -1,10 +1,10 @@
-package com.xa.crmgena.jwtauth;
+package com.xa.crmgena.crm;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class JwtAuthApplicationTests {
+class CrmApplicationTests {
 
     @Test
     void contextLoads() {

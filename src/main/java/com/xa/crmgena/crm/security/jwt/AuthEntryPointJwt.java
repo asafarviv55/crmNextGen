@@ -1,4 +1,4 @@
-package com.xa.crmgena.jwtauth.security.jwt;
+package com.xa.crmgena.crm.security.jwt;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;

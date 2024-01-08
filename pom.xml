@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.xa.crmgena</groupId>
-    <artifactId>jwt-auth</artifactId>
+    <artifactId>crm-gen</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>jwt-auth</name>
-    <description>jwt-auth</description>
+    <name>crm-gen</name>
+    <description>crm-gen</description>
     <properties>
         <java.version>17</java.version>
     </properties>

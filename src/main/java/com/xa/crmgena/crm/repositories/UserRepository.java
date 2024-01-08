@@ -1,6 +1,6 @@
-package com.xa.crmgena.jwtauth.repositories;
+package com.xa.crmgena.crm.repositories;
 
-import com.xa.crmgena.jwtauth.models.User;
+import com.xa.crmgena.crm.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

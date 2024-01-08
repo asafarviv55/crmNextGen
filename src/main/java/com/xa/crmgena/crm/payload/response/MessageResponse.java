@@ -1,4 +1,4 @@
-package com.xa.crmgena.jwtauth.payload.response;
+package com.xa.crmgena.crm.payload.response;
 
 public class MessageResponse {
   private String message;
