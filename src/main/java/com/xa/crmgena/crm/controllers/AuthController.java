@@ -47,10 +47,6 @@ public class AuthController {
 
 
 
-
-
-
-
     @GetMapping("welcome")
     public String hello(){
         return "auth area";

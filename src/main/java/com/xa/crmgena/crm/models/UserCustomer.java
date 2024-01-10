@@ -8,6 +8,7 @@ import jakarta.persistence.*;
 public class UserCustomer {
     @Id
     @Column(name = "user_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long userId;
 
     @Id

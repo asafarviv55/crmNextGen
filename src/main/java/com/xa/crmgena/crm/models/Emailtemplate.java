@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 @Table(name = "emailtemplates")
 public class Emailtemplate {
     @Id
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "name")
