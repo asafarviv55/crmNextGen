@@ -1,13 +1,11 @@
 package com.xa.crmgena.crm.controllers;
 
 
+import com.xa.crmgena.crm.models.Lead;
 import com.xa.crmgena.crm.models.User;
 import com.xa.crmgena.crm.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,7 +23,10 @@ public class UserController {
         return "users area";
     }
 
-
+    @PostMapping("/create")
+    public User createLead(@RequestBody User user) {
+        return userRepository.save(user);
+    }
 
     @GetMapping
   //  @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
