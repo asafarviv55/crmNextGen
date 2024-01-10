@@ -29,8 +29,14 @@ public class WebSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth ->
-                        auth.requestMatchers("/auth/**").permitAll()
-                                .requestMatchers("/users/**").permitAll()
+                        auth.requestMatchers("/api/auth/**").permitAll()
+                                .requestMatchers("/api/users/**").permitAll()
+                                .requestMatchers("/api/accounts/**").permitAll()
+                                .requestMatchers("/api/customers/**").permitAll()
+                                .requestMatchers("/api/articles/**").permitAll()
+                                .requestMatchers("/api/leads/**").permitAll()
+                                .requestMatchers("/api/campaigns/**").permitAll()
+
                                 .anyRequest().authenticated()
                         )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

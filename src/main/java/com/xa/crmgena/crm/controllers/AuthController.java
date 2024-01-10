@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/api/auth")
 public class AuthController {
     @Autowired
     AuthenticationManager authenticationManager;
@@ -44,6 +44,20 @@ public class AuthController {
 
     @Autowired
     JwtUtils jwtUtils;
+
+
+
+
+
+
+
+    @GetMapping("welcome")
+    public String hello(){
+        return "auth area";
+    }
+
+
+
 
     @PostMapping("/signin")
     public ResponseEntity<JwtResponse> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
