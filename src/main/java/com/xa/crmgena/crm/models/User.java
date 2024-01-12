@@ -19,25 +19,25 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "FirstName")
+    @Column(name = "firstName")
     private String firstName;
 
-    @Column(name = "LastName")
+    @Column(name = "lastName")
     private String lastName;
 
-    @Column(name = "UserName")
+    @Column(name = "userName")
     private String userName;
 
-    @Column(name = "Email")
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "Password")
+    @Column(name = "password")
     private String password;
 
-    @Column(name = "CreatedAt")
+    @Column(name = "createdAt")
     private java.sql.Timestamp createdAt;
 
-    @Column(name = "UpdatedAt")
+    @Column(name = "updatedAt")
     private java.sql.Timestamp updatedAt;
 
     @ManyToMany(fetch = FetchType.LAZY)
