@@ -2,6 +2,7 @@ package com.xa.crmgena.crm.models;
 
 import jakarta.persistence.*;
 
+import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -34,11 +35,17 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "createdAt")
-    private java.sql.Timestamp createdAt;
+    @Column(name = "created_on")
+    private java.sql.Timestamp created_on;
 
-    @Column(name = "updatedAt")
-    private java.sql.Timestamp updatedAt;
+    @Column(name = "updated_on")
+    private java.sql.Timestamp updated_on;
+
+    @Column(name = "created_by")
+    private long created_by;
+
+    @Column(name = "updated_by")
+    private long updated_by;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(  name = "user_roles",
@@ -103,20 +110,36 @@ public class User {
         this.password = password;
     }
 
-    public java.sql.Timestamp getCreatedAt() {
-        return this.createdAt;
+    public Timestamp getCreated_on() {
+        return created_on;
     }
 
-    public void setCreatedAt(java.sql.Timestamp createdAt) {
-        this.createdAt = createdAt;
+    public void setCreated_on(Timestamp created_on) {
+        this.created_on = created_on;
     }
 
-    public java.sql.Timestamp getUpdatedAt() {
-        return this.updatedAt;
+    public Timestamp getUpdated_on() {
+        return updated_on;
     }
 
-    public void setUpdatedAt(java.sql.Timestamp updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setUpdated_on(Timestamp updated_on) {
+        this.updated_on = updated_on;
+    }
+
+    public long getCreated_by() {
+        return created_by;
+    }
+
+    public void setCreated_by(long created_by) {
+        this.created_by = created_by;
+    }
+
+    public long getUpdated_by() {
+        return updated_by;
+    }
+
+    public void setUpdated_by(long updated_by) {
+        this.updated_by = updated_by;
     }
 
     public Set<Role> getRoles() {

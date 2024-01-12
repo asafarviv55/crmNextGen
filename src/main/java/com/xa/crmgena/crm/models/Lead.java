@@ -1,6 +1,8 @@
 package com.xa.crmgena.crm.models;
 import jakarta.persistence.*;
 
+import java.sql.Timestamp;
+
 @Entity
 @Table(name = "leads")
 public class Lead {
@@ -20,17 +22,34 @@ public class Lead {
     @Column(name = "created_on")
     private java.sql.Timestamp createdOn;
 
-    @Column(name = "edited_on")
-    private java.sql.Timestamp editedOn;
+    @Column(name = "updated_on")
+    private java.sql.Timestamp updated_on;
 
     @Column(name = "created_by")
     private Long createdBy;
 
-    @Column(name = "edited_by")
-    private Long editedBy;
+    @Column(name = "updated_by")
+    private Long updated_by;
 
     @Column(name = "customer_id")
     private Long customerId;
+
+
+    public Timestamp getUpdated_on() {
+        return updated_on;
+    }
+
+    public void setUpdated_on(Timestamp updated_on) {
+        this.updated_on = updated_on;
+    }
+
+    public Long getUpdated_by() {
+        return updated_by;
+    }
+
+    public void setUpdated_by(Long updated_by) {
+        this.updated_by = updated_by;
+    }
 
     public Long getId() {
         return this.id;
@@ -72,28 +91,12 @@ public class Lead {
         this.createdOn = createdOn;
     }
 
-    public java.sql.Timestamp getEditedOn() {
-        return this.editedOn;
-    }
-
-    public void setEditedOn(java.sql.Timestamp editedOn) {
-        this.editedOn = editedOn;
-    }
-
     public Long getCreatedBy() {
         return this.createdBy;
     }
 
     public void setCreatedBy(Long createdBy) {
         this.createdBy = createdBy;
-    }
-
-    public Long getEditedBy() {
-        return this.editedBy;
-    }
-
-    public void setEditedBy(Long editedBy) {
-        this.editedBy = editedBy;
     }
 
     public Long getCustomerId() {

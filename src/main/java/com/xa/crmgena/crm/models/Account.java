@@ -27,8 +27,8 @@ public class Account {
     @Column(name = "created_by")
     private Long createdBy;
 
-    @Column(name = "edited_by")
-    private Long editedBy;
+    @Column(name = "updated_by")
+    private Long updated_by;
 
     @Column(name = "customer_id")
     private Long customerId;
@@ -37,19 +37,19 @@ public class Account {
     public Account() {
     }
 
-    public Account(Long id, String name, String industry, Timestamp createdOn, Timestamp editedOn, Long createdBy, Long editedBy, Long customerId) {
+    public Account(Long id, String name, String industry, Timestamp createdOn, Timestamp editedOn, Long createdBy, Long updated_by, Long customerId) {
         this.id = id;
         this.name = name;
         this.industry = industry;
         this.createdOn = createdOn;
         this.editedOn = editedOn;
         this.createdBy = createdBy;
-        this.editedBy = editedBy;
+        this.updated_by = updated_by;
         this.customerId = customerId;
     }
 
     public Long getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(Long id) {
@@ -57,7 +57,7 @@ public class Account {
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public void setName(String name) {
@@ -65,47 +65,47 @@ public class Account {
     }
 
     public String getIndustry() {
-        return this.industry;
+        return industry;
     }
 
     public void setIndustry(String industry) {
         this.industry = industry;
     }
 
-    public java.sql.Timestamp getCreatedOn() {
-        return this.createdOn;
+    public Timestamp getCreatedOn() {
+        return createdOn;
     }
 
-    public void setCreatedOn(java.sql.Timestamp createdOn) {
+    public void setCreatedOn(Timestamp createdOn) {
         this.createdOn = createdOn;
     }
 
-    public java.sql.Timestamp getEditedOn() {
-        return this.editedOn;
+    public Timestamp getEditedOn() {
+        return editedOn;
     }
 
-    public void setEditedOn(java.sql.Timestamp editedOn) {
+    public void setEditedOn(Timestamp editedOn) {
         this.editedOn = editedOn;
     }
 
     public Long getCreatedBy() {
-        return this.createdBy;
+        return createdBy;
     }
 
     public void setCreatedBy(Long createdBy) {
         this.createdBy = createdBy;
     }
 
-    public Long getEditedBy() {
-        return this.editedBy;
+    public Long getUpdated_by() {
+        return updated_by;
     }
 
-    public void setEditedBy(Long editedBy) {
-        this.editedBy = editedBy;
+    public void setUpdated_by(Long updated_by) {
+        this.updated_by = updated_by;
     }
 
     public Long getCustomerId() {
-        return this.customerId;
+        return customerId;
     }
 
     public void setCustomerId(Long customerId) {
