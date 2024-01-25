@@ -26,6 +26,7 @@ public class UserController {
     @PostMapping("/create")
     public User createLead(@RequestBody User user) {
         return userRepository.save(user);
+
     }
 
     @GetMapping
@@ -47,7 +48,7 @@ public class UserController {
 
 
 
-    @GetMapping("/dashboard")
+    @GetMapping("/3")
     //@PreAuthorize("hasRole('ADMIN')")
     public List<User> getAllAdminDashbord(){
         return userRepository.findAll();

@@ -35,19 +35,19 @@ public class LeadController {
         }
 
     // Create
-        @PostMapping("/create")
+        @PostMapping
         public Lead createLead(@RequestBody Lead lead) {
             return leadRepository.save(lead);
         }
 
         // Read
-        @GetMapping
+        @GetMapping("/")
         public List<Lead> getAllLeads() {
             return leadRepository.findAll();
         }
 
 
-        @GetMapping("/get/{id}")
+        @GetMapping("/{id}")
         public ResponseEntity<Lead> getLeadById(@PathVariable Long id) {
             Optional<Lead> lead = leadRepository.findById(id);
             return lead.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
@@ -57,7 +57,7 @@ public class LeadController {
 
 
         // Update
-        @PutMapping("/update/{id}")
+        @PutMapping("/{id}")
         public ResponseEntity<Lead> updateLead(@PathVariable Long id, @RequestBody Lead updatedLead) {
             Optional<Lead> existingLead = leadRepository.findById(id);
             if (existingLead.isPresent()) {
@@ -70,7 +70,7 @@ public class LeadController {
         }
 
         // Delete
-        @DeleteMapping("/delete/{id}")
+        @DeleteMapping("/{id}")
         public ResponseEntity<Void> deleteLead(@PathVariable Long id) {
             if (leadRepository.existsById(id)) {
                 leadRepository.deleteById(id);

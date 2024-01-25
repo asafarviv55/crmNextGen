@@ -2,9 +2,7 @@ package com.xa.crmgena.crm.controllers;
 
 
 import com.xa.crmgena.crm.models.Campaign;
-import com.xa.crmgena.crm.models.Ticket;
 import com.xa.crmgena.crm.repositories.CampaignRepository;
-import com.xa.crmgena.crm.repositories.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

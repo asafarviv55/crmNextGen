@@ -17,17 +17,18 @@ public class CrmApplication {
     }
 
 
-    private static final Logger log =  LoggerFactory.getLogger(CrmApplication.class);
+    private static final Logger logger =  LoggerFactory.getLogger(CrmApplication.class);
 
     @Bean
     CommandLineRunner initDatabase(RoleRepository roleRepository){
+        logger.info("CrmApplication initDatabase start ");
         return args -> {
             if(roleRepository.count() == 0){
-                log.info("Preloading " + roleRepository.save(
+                logger.info("Preloading " + roleRepository.save(
                         new Role("ROLE_ADMIN")));
-                log.info("Preloading " + roleRepository.save(
+                logger.info("Preloading " + roleRepository.save(
                         new Role("ROLE_USER")));
-                log.info("Preloading " + roleRepository.save(
+                logger.info("Preloading " + roleRepository.save(
                         new Role("ROLE_MODERATOR")));
             }
         };
