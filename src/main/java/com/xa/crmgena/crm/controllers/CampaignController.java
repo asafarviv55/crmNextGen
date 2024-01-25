@@ -23,7 +23,7 @@ public class CampaignController {
 
     @GetMapping("welcome")
     public String hello(){
-        return "tickets area";
+        return "campaigns area";
     }
 
     // Create

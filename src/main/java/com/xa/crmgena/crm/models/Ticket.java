@@ -2,6 +2,8 @@ package com.xa.crmgena.crm.models;
 
 import jakarta.persistence.*;
 
+import java.sql.Timestamp;
+
 
 @Entity
 @Table(name = "tickets")
@@ -20,16 +22,16 @@ public class Ticket {
     private String status;
 
     @Column(name = "created_on")
-    private java.sql.Timestamp createdOn;
+    private java.sql.Timestamp created_on;
 
-    @Column(name = "edited_on")
-    private java.sql.Timestamp editedOn;
+    @Column(name = "updated_on")
+    private java.sql.Timestamp updated_on;
 
     @Column(name = "created_by")
-    private Long createdBy;
+    private Long created_by;
 
-    @Column(name = "edited_by")
-    private Long editedBy;
+    @Column(name = "updated_by")
+    private Long updated_by;
 
     @Column(name = "customer_id")
     private Long customerId;
@@ -66,36 +68,36 @@ public class Ticket {
         this.status = status;
     }
 
-    public java.sql.Timestamp getCreatedOn() {
-        return this.createdOn;
+    public Timestamp getCreated_on() {
+        return created_on;
     }
 
-    public void setCreatedOn(java.sql.Timestamp createdOn) {
-        this.createdOn = createdOn;
+    public void setCreated_on(Timestamp created_on) {
+        this.created_on = created_on;
     }
 
-    public java.sql.Timestamp getEditedOn() {
-        return this.editedOn;
+    public Timestamp getUpdated_on() {
+        return updated_on;
     }
 
-    public void setEditedOn(java.sql.Timestamp editedOn) {
-        this.editedOn = editedOn;
+    public void setUpdated_on(Timestamp updated_on) {
+        this.updated_on = updated_on;
     }
 
-    public Long getCreatedBy() {
-        return this.createdBy;
+    public Long getCreated_by() {
+        return created_by;
     }
 
-    public void setCreatedBy(Long createdBy) {
-        this.createdBy = createdBy;
+    public void setCreated_by(Long created_by) {
+        this.created_by = created_by;
     }
 
-    public Long getEditedBy() {
-        return this.editedBy;
+    public Long getUpdated_by() {
+        return updated_by;
     }
 
-    public void setEditedBy(Long editedBy) {
-        this.editedBy = editedBy;
+    public void setUpdated_by(Long updated_by) {
+        this.updated_by = updated_by;
     }
 
     public Long getCustomerId() {

@@ -36,6 +36,9 @@ public class WebSecurityConfig {
                                 .requestMatchers("/api/articles/**").permitAll()
                                 .requestMatchers("/api/leads/**").permitAll()
                                 .requestMatchers("/api/campaigns/**").permitAll()
+                                .requestMatchers("/api/tickets/**").permitAll()
+                                .requestMatchers("/api/opportunities/**").permitAll()
+
 
                                 .anyRequest().authenticated()
                         )
