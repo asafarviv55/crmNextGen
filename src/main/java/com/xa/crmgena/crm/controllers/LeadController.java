@@ -29,7 +29,7 @@ public class LeadController {
 
 
 
-        @GetMapping("welcome")
+        @GetMapping("/welcome")
         public String hello(){
             return "leads area";
         }
