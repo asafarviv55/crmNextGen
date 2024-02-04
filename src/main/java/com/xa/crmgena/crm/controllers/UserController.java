@@ -1,7 +1,7 @@
 package com.xa.crmgena.crm.controllers;
 
 
-import com.xa.crmgena.crm.models.Lead;
+import com.xa.crmgena.crm.models.Option;
 import com.xa.crmgena.crm.models.User;
 import com.xa.crmgena.crm.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,10 +36,15 @@ public class UserController {
     }
 
 
+    @GetMapping("/options")
+    public List<Option> getAllOptions() {
+            return userRepository.getAllOptions();
+
+    }
 
 
 
-    @GetMapping("/moderator")
+        @GetMapping("/moderator")
    // @PreAuthorize("hasRole('MODERATOR')")
     public List<User> getAllModerator(){
         return userRepository.findAll();

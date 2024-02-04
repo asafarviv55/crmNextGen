@@ -5,6 +5,8 @@ import com.xa.crmgena.crm.dtos.LeadDTO;
 import com.xa.crmgena.crm.models.Lead;
 import com.xa.crmgena.crm.repositories.LeadRepository;
 import com.xa.crmgena.crm.services.LeadService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +26,7 @@ import java.util.Optional;
 @RequestMapping("/api/leads")
 public class LeadController {
 
+        private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
 
         @Autowired
         LeadRepository leadRepository;
@@ -33,17 +36,17 @@ public class LeadController {
 
 
 
-
-
-
         @GetMapping("/welcome")
         public String hello(){
+            logger.info(" LeadController.hello ---> Lead API Work !!");
             return "leads area";
         }
 
     // Create
         @PostMapping
         public Lead createLead(@RequestBody LeadDTO leadDTO) {
+            logger.info(" LeadController.createLead ---> leadDTO is "+ leadDTO.toString());
+
             Lead lead = new Lead();
             leadService.convertLeadDTO(leadDTO, lead);
             return leadRepository.save(lead);

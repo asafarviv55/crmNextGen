@@ -5,6 +5,8 @@ import com.xa.crmgena.crm.dtos.CustomerDTO;
 import com.xa.crmgena.crm.models.Lead;
 import com.xa.crmgena.crm.services.CustomerService;
 import com.xa.crmgena.crm.services.LeadService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,6 +27,7 @@ import java.util.Optional;
 @RequestMapping("/api/customers")
 public class CustomerController {
 
+        private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
 
 
         @Autowired

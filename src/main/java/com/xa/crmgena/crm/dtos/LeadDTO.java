@@ -136,4 +136,27 @@ public class LeadDTO {
     public void setIndustry(String industry) {
         this.industry = industry;
     }
+
+
+    @Override
+    public String toString() {
+        return "LeadDTO{" +
+                "name='" + name + '\'' +
+                ", source='" + source + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", status='" + status + '\'' +
+                ", assignTo=" + assignTo +
+                ", priority='" + priority + '\'' +
+                ", note='" + note + '\'' +
+                ", dateOfEntry='" + dateOfEntry + '\'' +
+                ", customerID=" + customerID +
+                ", createdBy=" + createdBy +
+                ", industry='" + industry + '\'' +
+                '}';
+    }
+
+
+
+
 }
