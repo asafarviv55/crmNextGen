@@ -35,7 +35,7 @@ public class CustomerController {
 
 
 
-    @GetMapping("welcome")
+        @GetMapping("/welcome")
         public String hello(){
             return "customers area";
         }
