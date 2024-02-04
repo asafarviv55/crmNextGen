@@ -8,57 +8,37 @@ public class LeadDTO {
     private String phone;
     private String email;
     private String status;
-    private Long AssignTo;
+
+    private Long assignTo;
     private String priority;
     private String note;
     private String dateOfEntry;
     private Long customerID;
     private Long createdBy;
 
+    private String industry;
 
 
-
-
-
-
-    public Long getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(Long createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public Long getCustomerID() {
-        return customerID;
-    }
-
-    public void setCustomerID(Long customerID) {
-        this.customerID = customerID;
-    }
-
-    public String getDateOfEntry() {
-        return dateOfEntry;
-    }
-
-    public void setDateOfEntry(String dateOfEntry) {
-        this.dateOfEntry = dateOfEntry;
-    }
-
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
-    }
-
-    public String getPriority() {
-        return priority;
-    }
-
-    public void setPriority(String priority) {
+    public LeadDTO(String name, String source, String phone, String email, String status, Long assignTo, String priority, String note, String dateOfEntry, Long customerID, Long createdBy, String industry) {
+        this.name = name;
+        this.source = source;
+        this.phone = phone;
+        this.email = email;
+        this.status = status;
+        this.assignTo = assignTo;
         this.priority = priority;
+        this.note = note;
+        this.dateOfEntry = dateOfEntry;
+        this.customerID = customerID;
+        this.createdBy = createdBy;
+        this.industry = industry;
+    }
+
+    public LeadDTO(String name) {
+        this.name = name;
+    }
+
+    public LeadDTO() {
     }
 
     public String getName() {
@@ -102,16 +82,58 @@ public class LeadDTO {
     }
 
     public Long getAssignTo() {
-        return AssignTo;
+        return assignTo;
     }
 
     public void setAssignTo(Long assignTo) {
-        AssignTo = assignTo;
+        this.assignTo = assignTo;
     }
 
+    public String getPriority() {
+        return priority;
+    }
 
+    public void setPriority(String priority) {
+        this.priority = priority;
+    }
 
+    public String getNote() {
+        return note;
+    }
 
+    public void setNote(String note) {
+        this.note = note;
+    }
 
+    public String getDateOfEntry() {
+        return dateOfEntry;
+    }
 
+    public void setDateOfEntry(String dateOfEntry) {
+        this.dateOfEntry = dateOfEntry;
+    }
+
+    public Long getCustomerID() {
+        return customerID;
+    }
+
+    public void setCustomerID(Long customerID) {
+        this.customerID = customerID;
+    }
+
+    public Long getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(Long createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public String getIndustry() {
+        return industry;
+    }
+
+    public void setIndustry(String industry) {
+        this.industry = industry;
+    }
 }

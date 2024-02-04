@@ -1,6 +1,10 @@
 package com.xa.crmgena.crm.controllers;
 
 
+import com.xa.crmgena.crm.dtos.CustomerDTO;
+import com.xa.crmgena.crm.models.Lead;
+import com.xa.crmgena.crm.services.CustomerService;
+import com.xa.crmgena.crm.services.LeadService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,27 +30,32 @@ public class CustomerController {
         @Autowired
         CustomerRepository customerRepository;
 
+        @Autowired
+        CustomerService customerService;
 
 
-        @GetMapping("welcome")
+
+    @GetMapping("welcome")
         public String hello(){
             return "customers area";
         }
 
 
-        @PostMapping("/create")
-            public Customer createCustomer(@RequestBody Customer customer) {
+        @PostMapping
+        public Customer createCustomer(@RequestBody CustomerDTO customerDTO) {
+            Customer customer = new Customer();
+            customerService.convertCustomerDTO(customerDTO, customer);
             return customerRepository.save(customer);
-        }
+         }
 
         // Read
-        @GetMapping
+        @GetMapping("/")
         public List<Customer> getAllCustomers() {
             return customerRepository.findAll();
         }
 
 
-        @GetMapping("/get/{id}")
+        @GetMapping("/{id}")
         public ResponseEntity<Customer> getCustomerById(@PathVariable Long id) {
             Optional<Customer> customer = customerRepository.findById(id);
             return customer.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
@@ -54,7 +63,7 @@ public class CustomerController {
         }
 
         // Update
-        @PutMapping("/update/{id}")
+        @PutMapping("/{id}")
         public ResponseEntity<Customer> updateCustomer(@PathVariable Long id, @RequestBody Customer updatedCustomer) {
             Optional<Customer> existingCustomer = customerRepository.findById(id);
             if (existingCustomer.isPresent()) {
@@ -67,7 +76,7 @@ public class CustomerController {
         }
 
         // Delete
-        @DeleteMapping("/delete/{id}")
+        @DeleteMapping("/{id}")
         public ResponseEntity<Void> deleteCustomer(@PathVariable Long id) {
             if (customerRepository.existsById(id)) {
                 customerRepository.deleteById(id);

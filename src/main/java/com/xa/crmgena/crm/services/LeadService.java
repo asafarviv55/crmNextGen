@@ -15,15 +15,15 @@ public class LeadService {
 
     public void convertLeadDTO(LeadDTO leadDTO, Lead lead) {
         lead.setEmail(leadDTO.getEmail());
-        lead.setAssignTo(lead.getAssignTo());
-        lead.setPhone(lead.getPhone());
-        lead.setName(lead.getName());
-        lead.setStatus(lead.getStatus());
-        lead.setSource(lead.getSource());
-        lead.setPriority(lead.getPriority());
-        lead.setIndustry(lead.getIndustry());
-        lead.setCustomerId(lead.getCustomerId());
-        lead.setNote(lead.getNote());
+        lead.setAssignTo(leadDTO.getAssignTo());
+        lead.setPhone(leadDTO.getPhone());
+        lead.setName(leadDTO.getName());
+        lead.setStatus(leadDTO.getStatus());
+        lead.setSource(leadDTO.getSource());
+        lead.setPriority(leadDTO.getPriority());
+        lead.setIndustry(leadDTO.getIndustry());
+        lead.setCustomerId(leadDTO.getCustomerID());
+        lead.setNote(leadDTO.getNote());
     }
 
 

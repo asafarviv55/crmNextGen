@@ -37,7 +37,7 @@ public class Lead {
     private String email;
 
 
-    @Column(name = "AssignTo")
+    @Column(name = "assignTo")
     private Long AssignTo;
 
     @Column(name = "created_on")
@@ -54,6 +54,9 @@ public class Lead {
 
     @Column(name = "customer_id")
     private Long customerId;
+
+
+
 
 
     public String getNote() {
