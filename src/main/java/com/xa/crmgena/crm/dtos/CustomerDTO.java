@@ -2,8 +2,8 @@ package com.xa.crmgena.crm.dtos;
 
 public class CustomerDTO {
 
-    private Long customerID;
-    private String customerName;
+    private Long id;
+    private String name;
     private String email;
     private String phone;
     private String address;
@@ -15,11 +15,18 @@ public class CustomerDTO {
     private String assignedSalesRepresentative;
     private String paymentTerms;
 
-    public CustomerDTO(Long customerID, String customerName, String email, String phone, String address, String accountNumber,
-                       String purchaseHistory, String communicationPreferences, String customerStatus, String subscriptionInformation,
+
+    public CustomerDTO() {
+
+    }
+
+    public CustomerDTO(Long id, String name, String email,
+                       String phone, String address, String accountNumber,
+                       String purchaseHistory, String communicationPreferences,
+                       String customerStatus, String subscriptionInformation,
                        String assignedSalesRepresentative, String paymentTerms) {
-        this.customerID = customerID;
-        this.customerName = customerName;
+        this.id = id;
+        this.name = name;
         this.email = email;
         this.phone = phone;
         this.address = address;
@@ -32,25 +39,30 @@ public class CustomerDTO {
         this.paymentTerms = paymentTerms;
     }
 
-    public CustomerDTO() {
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Long getCustomerID() {
-        return customerID;
+        return id;
     }
 
-    public void setCustomerID(Long customerID) {
-        this.customerID = customerID;
+    public void setCustomerID(Long id) {
+        this.id = id;
     }
 
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
 
     public String getEmail() {
         return email;

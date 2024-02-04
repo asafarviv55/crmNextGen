@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "customers")
 public class Customer {
     @Id
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "name")
@@ -17,6 +17,35 @@ public class Customer {
 
     @Column(name = "phone")
     private String phone;
+
+
+    @Column(name = "address")
+    private String address;
+
+    @Column(name = "accountNumber")
+    private String accountNumber;
+
+    @Column(name = "purchaseHistory")
+    private String purchaseHistory;
+
+    @Column(name = "communicationPreferences")
+    private String communicationPreferences;
+
+    @Column(name = "customerStatus")
+    private String customerStatus;
+
+    @Column(name = "subscriptionInformation")
+    private String subscriptionInformation;
+
+    @Column(name = "paymentTerms")
+    private String paymentTerms;
+
+
+    @Column(name = "assignedSalesRepresentative")
+    private String assignedSalesRepresentative;
+
+
+
 
     @Column(name = "created_on")
     private java.sql.Timestamp createdOn;
@@ -29,6 +58,71 @@ public class Customer {
 
     @Column(name = "updated_by")
     private Long updatedBy;
+
+
+    public String getAssignedSalesRepresentative() {
+        return assignedSalesRepresentative;
+    }
+
+    public void setAssignedSalesRepresentative(String assignedSalesRepresentative) {
+        this.assignedSalesRepresentative = assignedSalesRepresentative;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public String getPurchaseHistory() {
+        return purchaseHistory;
+    }
+
+    public void setPurchaseHistory(String purchaseHistory) {
+        this.purchaseHistory = purchaseHistory;
+    }
+
+    public String getCommunicationPreferences() {
+        return communicationPreferences;
+    }
+
+    public void setCommunicationPreferences(String communicationPreferences) {
+        this.communicationPreferences = communicationPreferences;
+    }
+
+    public String getCustomerStatus() {
+        return customerStatus;
+    }
+
+    public void setCustomerStatus(String customerStatus) {
+        this.customerStatus = customerStatus;
+    }
+
+    public String getSubscriptionInformation() {
+        return subscriptionInformation;
+    }
+
+    public void setSubscriptionInformation(String subscriptionInformation) {
+        this.subscriptionInformation = subscriptionInformation;
+    }
+
+    public String getPaymentTerms() {
+        return paymentTerms;
+    }
+
+    public void setPaymentTerms(String paymentTerms) {
+        this.paymentTerms = paymentTerms;
+    }
 
     public Long getId() {
         return this.id;

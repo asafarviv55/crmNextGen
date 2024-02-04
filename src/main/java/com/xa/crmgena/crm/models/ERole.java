@@ -1,7 +1,7 @@
 package com.xa.crmgena.crm.models;
 
 public enum ERole {
-    ROLE_USER,
-    ROLE_MODERATOR,
-    ROLE_ADMIN
+    SALES_MAN,
+    SALES_MANAGER,
+    ADMIN
 }
