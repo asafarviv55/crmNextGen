@@ -4,6 +4,7 @@ import com.xa.crmgena.crm.models.Option;
 import com.xa.crmgena.crm.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     Boolean existsByEmail(String email);
 
-    @Query("select id,metakey,metavalue from options")
+    @Query("SELECT o.id, o.metakey , o.metavalue FROM Option o")
     List<Option> getAllOptions();
 
 

@@ -18,7 +18,7 @@ public class UserController {
     UserRepository userRepository;
 
 
-    @GetMapping("welcome")
+    @GetMapping("/welcome")
     public String hello(){
         return "users area";
     }
@@ -30,7 +30,6 @@ public class UserController {
     }
 
     @GetMapping
-  //  @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
     public List<User> getAll(){
         return userRepository.findAll();
     }
@@ -45,7 +44,6 @@ public class UserController {
 
 
         @GetMapping("/moderator")
-   // @PreAuthorize("hasRole('MODERATOR')")
     public List<User> getAllModerator(){
         return userRepository.findAll();
     }
@@ -54,7 +52,6 @@ public class UserController {
 
 
     @GetMapping("/3")
-    //@PreAuthorize("hasRole('ADMIN')")
     public List<User> getAllAdminDashbord(){
         return userRepository.findAll();
     }
