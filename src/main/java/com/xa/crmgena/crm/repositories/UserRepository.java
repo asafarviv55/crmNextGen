@@ -19,7 +19,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     Boolean existsByEmail(String email);
 
-    @Query("SELECT o.id, o.metakey , o.metavalue FROM Option o")
+    @Query("SELECT o FROM Option o")
     List<Option> getAllOptions();
 
 
