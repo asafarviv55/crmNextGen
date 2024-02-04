@@ -35,6 +35,21 @@ public class User {
     @Column(name = "password")
     private String password;
 
+
+    @Column(name = "isActive")
+    private boolean isActive;
+
+    @Column(name = "accountExpiryDate")
+    private String accountExpiryDate;
+
+    @Column(name = "accountLocking")
+    private String accountLocking;
+
+    @Column(name = "credentialsExpiryDate")
+    private String credentialsExpiryDate;
+
+
+
     @Column(name = "created_on")
     private java.sql.Timestamp created_on;
 
@@ -49,17 +64,71 @@ public class User {
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(  name = "user_roles",
-            joinColumns = @JoinColumn(name = "user_id"),
+            joinColumns = @JoinColumn(name = "id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
     public User() {
     }
 
-    public User(String username, String email, String password) {
-        this.userName = username;
+    public User(String firstName, String email, String password) {
+        this.firstName = firstName;
         this.email = email;
         this.password = password;
+    }
+
+    public User(Long id, String firstName, String lastName, String userName,
+                String email, String password, boolean isActive,
+                String accountExpiryDate, String accountLocking,
+                String credentialsExpiryDate, Timestamp created_on,
+                Timestamp updated_on, long created_by, long updated_by, Set<Role> roles) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+        this.isActive = isActive;
+        this.accountExpiryDate = accountExpiryDate;
+        this.accountLocking = accountLocking;
+        this.credentialsExpiryDate = credentialsExpiryDate;
+        this.created_on = created_on;
+        this.updated_on = updated_on;
+        this.created_by = created_by;
+        this.updated_by = updated_by;
+        this.roles = roles;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
+    public String getAccountExpiryDate() {
+        return accountExpiryDate;
+    }
+
+    public void setAccountExpiryDate(String accountExpiryDate) {
+        this.accountExpiryDate = accountExpiryDate;
+    }
+
+    public String getAccountLocking() {
+        return accountLocking;
+    }
+
+    public void setAccountLocking(String accountLocking) {
+        this.accountLocking = accountLocking;
+    }
+
+    public String getCredentialsExpiryDate() {
+        return credentialsExpiryDate;
+    }
+
+    public void setCredentialsExpiryDate(String credentialsExpiryDate) {
+        this.credentialsExpiryDate = credentialsExpiryDate;
     }
 
     public Long getId() {

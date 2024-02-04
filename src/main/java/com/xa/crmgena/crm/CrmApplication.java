@@ -25,11 +25,11 @@ public class CrmApplication {
         return args -> {
             if(roleRepository.count() == 0){
                 logger.info("Preloading " + roleRepository.save(
-                        new Role("Admin")));
+                        new Role("ADMIN")));
                 logger.info("Preloading " + roleRepository.save(
-                        new Role("Sales Representative")));
+                        new Role("SALES_MAN")));
                 logger.info("Preloading " + roleRepository.save(
-                        new Role("Sales Manager")));
+                        new Role("SALES_MANAGER")));
             }
         };
     }
