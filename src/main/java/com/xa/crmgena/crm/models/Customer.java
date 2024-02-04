@@ -1,14 +1,12 @@
 package com.xa.crmgena.crm.models;
+
 import jakarta.persistence.*;
-
-import java.sql.Timestamp;
-
 
 @Entity
 @Table(name = "customers")
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "name")
@@ -21,34 +19,19 @@ public class Customer {
     private String phone;
 
     @Column(name = "created_on")
-    private java.sql.Timestamp created_on;
+    private java.sql.Timestamp createdOn;
 
     @Column(name = "updated_on")
-    private java.sql.Timestamp updated_on;
+    private java.sql.Timestamp updatedOn;
 
     @Column(name = "created_by")
-    private Long created_by;
+    private Long createdBy;
 
     @Column(name = "updated_by")
-    private Long updated_by;
-
-
-    public Customer() {
-    }
-
-    public Customer(Long id, String name, String email, String phone, Timestamp created_on, Timestamp updated_on, Long created_by, Long updated_by) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-        this.created_on = created_on;
-        this.updated_on = updated_on;
-        this.created_by = created_by;
-        this.updated_by = updated_by;
-    }
+    private Long updatedBy;
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -56,7 +39,7 @@ public class Customer {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -64,7 +47,7 @@ public class Customer {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -72,42 +55,42 @@ public class Customer {
     }
 
     public String getPhone() {
-        return phone;
+        return this.phone;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public Timestamp getCreated_on() {
-        return created_on;
+    public java.sql.Timestamp getCreatedOn() {
+        return this.createdOn;
     }
 
-    public void setCreated_on(Timestamp created_on) {
-        this.created_on = created_on;
+    public void setCreatedOn(java.sql.Timestamp createdOn) {
+        this.createdOn = createdOn;
     }
 
-    public Timestamp getUpdated_on() {
-        return updated_on;
+    public java.sql.Timestamp getUpdatedOn() {
+        return this.updatedOn;
     }
 
-    public void setUpdated_on(Timestamp updated_on) {
-        this.updated_on = updated_on;
+    public void setUpdatedOn(java.sql.Timestamp updatedOn) {
+        this.updatedOn = updatedOn;
     }
 
-    public Long getCreated_by() {
-        return created_by;
+    public Long getCreatedBy() {
+        return this.createdBy;
     }
 
-    public void setCreated_by(Long created_by) {
-        this.created_by = created_by;
+    public void setCreatedBy(Long createdBy) {
+        this.createdBy = createdBy;
     }
 
-    public Long getUpdated_by() {
-        return updated_by;
+    public Long getUpdatedBy() {
+        return this.updatedBy;
     }
 
-    public void setUpdated_by(Long updated_by) {
-        this.updated_by = updated_by;
+    public void setUpdatedBy(Long updatedBy) {
+        this.updatedBy = updatedBy;
     }
 }

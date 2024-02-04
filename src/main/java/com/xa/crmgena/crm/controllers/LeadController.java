@@ -57,13 +57,18 @@ public class LeadController {
     // Read
         @GetMapping("/")
         public List<Lead> getAllLeads() {
+            logger.info(" LeadController.getAllLeads ");
+
             return leadRepository.findAll();
         }
 
 
         @GetMapping("/{id}")
         public ResponseEntity<Lead> getLeadById(@PathVariable Long id) {
+            logger.info(" LeadController.getLeadById ");
+
             Optional<Lead> lead = leadRepository.findById(id);
+
             return lead.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                     .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
         }
@@ -73,6 +78,8 @@ public class LeadController {
         // Update
         @PutMapping("/{id}")
         public ResponseEntity<Lead> updateLead(@PathVariable Long id, @RequestBody Lead updatedLead) {
+            logger.info(" LeadController.updateLead ");
+
             Optional<Lead> existingLead = leadRepository.findById(id);
             if (existingLead.isPresent()) {
                 updatedLead.setId(id);
@@ -86,6 +93,8 @@ public class LeadController {
         // Delete
         @DeleteMapping("/{id}")
         public ResponseEntity<Void> deleteLead(@PathVariable Long id) {
+            logger.info(" LeadController.deleteLead ");
+
             if (leadRepository.existsById(id)) {
                 leadRepository.deleteById(id);
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
