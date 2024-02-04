@@ -26,7 +26,7 @@ import java.util.Optional;
 @RequestMapping("/api/leads")
 public class LeadController {
 
-        private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
+        private static final Logger logger = LoggerFactory.getLogger(LeadController.class);
 
         @Autowired
         LeadRepository leadRepository;
