@@ -1,8 +1,10 @@
 package com.xa.crmgena.crm.controllers;
 
 
+import com.xa.crmgena.crm.dtos.LeadDTO;
 import com.xa.crmgena.crm.models.Lead;
 import com.xa.crmgena.crm.repositories.LeadRepository;
+import com.xa.crmgena.crm.services.LeadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,16 +18,21 @@ import java.util.List;
 import java.util.Optional;
 
 
+
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/leads")
 public class LeadController {
 
 
-
-
         @Autowired
         LeadRepository leadRepository;
+
+        @Autowired
+        LeadService leadService;
+
+
+
 
 
 
@@ -36,11 +43,15 @@ public class LeadController {
 
     // Create
         @PostMapping
-        public Lead createLead(@RequestBody Lead lead) {
+        public Lead createLead(@RequestBody LeadDTO leadDTO) {
+            Lead lead = new Lead();
+            leadService.convertLeadDTO(leadDTO, lead);
             return leadRepository.save(lead);
         }
 
-        // Read
+
+
+    // Read
         @GetMapping("/")
         public List<Lead> getAllLeads() {
             return leadRepository.findAll();
@@ -79,6 +90,12 @@ public class LeadController {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
         }
+
+
+
+
+
+
     }
 
 

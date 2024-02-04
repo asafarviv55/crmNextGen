@@ -19,6 +19,27 @@ public class Lead {
     @Column(name = "status")
     private String status;
 
+    @Column(name = "phone")
+    private String phone;
+
+    @Column(name = "industry")
+    private String industry;
+
+    @Column(name = "priority")
+    private String priority;
+
+    @Column(name = "note")
+    private String note;
+
+
+
+    @Column(name = "email")
+    private String email;
+
+
+    @Column(name = "AssignTo")
+    private Long AssignTo;
+
     @Column(name = "created_on")
     private java.sql.Timestamp createdOn;
 
@@ -34,6 +55,54 @@ public class Lead {
     @Column(name = "customer_id")
     private Long customerId;
 
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public String getIndustry() {
+        return industry;
+    }
+
+    public void setIndustry(String industry) {
+        this.industry = industry;
+    }
+
+    public String getPriority() {
+        return priority;
+    }
+
+    public void setPriority(String priority) {
+        this.priority = priority;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Long getAssignTo() {
+        return AssignTo;
+    }
+
+    public void setAssignTo(Long assignTo) {
+        AssignTo = assignTo;
+    }
 
     public Timestamp getUpdated_on() {
         return updated_on;
