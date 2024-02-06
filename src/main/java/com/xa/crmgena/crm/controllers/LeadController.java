@@ -43,7 +43,7 @@ public class LeadController {
         }
 
     // Create
-        @PostMapping
+        @PostMapping("/")
         public Lead createLead(@RequestBody LeadDTO leadDTO) {
             logger.info(" LeadController.createLead ---> leadDTO is "+ leadDTO.toString());
 
